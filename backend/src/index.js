@@ -90,7 +90,7 @@ module.exports = { User, Doctor, Appointment, File, DocApp };
 const app = express();
 app.use(express.json());
 app.use(express.urlencoded({ extended: false }));
-app.use(express.static("public"));
+// app.use(express.static("public"));
 app.set('view engine', 'ejs');
 app.set('views', path.join(__dirname,'frontend', 'views')); 
 app.use('/api', router);
@@ -390,7 +390,7 @@ app.get('/doctor-report', async (req, res) => {
 
 
 
-const port = 3000;
+const port = process.env.PORT||3000;
 app.listen(port, () => {
     console.log(`Server running on Port: ${port}`);
 });
