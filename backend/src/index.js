@@ -104,11 +104,11 @@ app.get('*', (req, res) => {
 });
 
 
-app.get("/", (req, res) => {
-    res.render("index");
-});
+// app.get("/", (req, res) => {
+//     res.render("index");
+// });
 
-app.get("/login", (req, res) => {
+app.get("/", (req, res) => {
     res.render("login");
 });
 app.get("/docLog", (req, res) => {
