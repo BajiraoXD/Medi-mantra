@@ -92,10 +92,11 @@ app.use(express.json());
 app.use(express.urlencoded({ extended: false }));
 app.use(express.static("public"));
 app.set('view engine', 'ejs');
+app.set('views', path.join(__dirname, 'views')); 
 app.use('/api', router);
 
-// Serve static files from the React app
-app.use(express.static(path.join(__dirname, '../public')));
+
+
 
 // Handle all other routes with the index.html file from the React app
 app.get('*', (req, res) => {
